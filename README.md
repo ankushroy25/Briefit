@@ -2,7 +2,7 @@
 
 BriefIt is a web application that can summarize news, articles, blogs and any text based information by simply putting the resource link. It runs on a GPT powered API.
 
-![](https://github.com/ankushroy25/briefit/public/preview.jpg)
+![](https://github.com/ankushroy25/briefit/blob/main/public/preview.png)
 
 ## 🔗 Links
 The app is live at - https://brief-it.netlify.app/ 
