@@ -8,6 +8,7 @@ const Demo = () => {
   const [allArticles, setAllArticles] = useState([]);
   const [getSummary, { error, isFetching }] = useLazyGetSummaryQuery();
   const [copied, setCopied] = useState("");
+  const [summaryCopied, setSummaryCopied] = useState("");
 
   useEffect(() => {
     const articlesFromLocalStorage = JSON.parse(
@@ -38,8 +39,15 @@ const Demo = () => {
     navigator.clipboard.writeText(copyUrl);
     setTimeout(() => setCopied(false, 3000));
   };
+
+  const handleSummaryCopy = (copySummary) => {
+    setSummaryCopied(copySummary);
+    navigator.clipboard.writeText(copySummary);
+    setTimeout(() => setSummaryCopied(false, 3000));
+  };
+
   return (
-    <section className="w-full max-w-xl mt-16 ">
+    <section className="w-full max-w-2xl mt-8 ">
       {/* search */}
       <div className="flex flex-col w-full gap-2">
         <form
@@ -60,8 +68,9 @@ const Demo = () => {
             ✅
           </button>
         </form>
+
         {/* URL history */}
-        <div className="flex flex-col gap-1 max-h-60 overflow-y-auto">
+        <div className="flex flex-col gap-1 max-h-36 overflow-y-auto">
           {allArticles.map((item, index) => (
             <div
               key={`link-${index}`}
@@ -98,9 +107,17 @@ const Demo = () => {
         ) : (
           article.summary && (
             <div className="flex flex-col gap-3">
-              <span className="blue_gradient text-2xl m-2">Summary</span>
+              <span className="flex flex-row justify-center font-extrabold text-gray-700 text-3xl m-2">
+                Summary
+                <div
+                  className="copy_btn ml-4"
+                  onClick={() => handleSummaryCopy(article.summary)}
+                >
+                  <img src={copy} />
+                </div>
+              </span>
               <div className="summary_box">
-                <p className="font-inter font-medium text-sm text-gray-700">
+                <p className="font-inter font-medium text-md text-gray-700">
                   {article.summary}
                 </p>
               </div>
