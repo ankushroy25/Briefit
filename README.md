@@ -1,8 +1,23 @@
-# React + Vite
+# BriefIt
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+BriefIt is a web application that can summarize news, articles, blogs and any text based information by simply putting the resource link. It runs on a GPT powered API.
 
-Currently, two official plugins are available:
+![](https://github.com/ankushroy25/briefit/blob/main/public/preview.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🔗 Links
+The app is live at - https://brief-it.netlify.app/ 
+
+## Features
+
+- **Summarize** articles, blogs etc.
+
+- **Extract and Summarize ** from some website and video resources as well.
+
+- Keeps record of ** previously generated summaries**
+
+## Tech Stack
+
+ React, Redux, TailwindCSS, RapidAPI
+
+
+## Author - [Ankush Roy ](https://github.com/ankushroy25)
